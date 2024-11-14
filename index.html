@@ -11,10 +11,9 @@
         <h1>Calculadora de Cuotas</h1>
         <div>
           <label for="monto">Monto:</label>
-          <input type="text" id="monto" placeholder="Ingrese el monto" oninput="formatearNumero(this)">
-        </div>
-        <button onclick="calcularCuotas()">Calcular</button>
-        <div id="resultado"></div>
+          <input type="text" id="monto" oninput="formatearNumero(this)" placeholder="Ingrese monto">
+          <button onclick="calcularCuotas()">Calcular Cuotas</button>
+          <div id="resultado"></div>
       </div>
 </body>
 <script src="./script.js"></script>
