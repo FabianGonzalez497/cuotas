@@ -1,11 +1,13 @@
 // Configuración de cuotas e intereses
 const configuracionCuotas = [
-    { cuotas: 2, interes: 50 },
-    { cuotas: 3, interes: 70 },
-    { cuotas: 6, interes: 120 },
-    { cuotas: 9, interes: 150 },
-    { cuotas: 12, interes: 200 },
-    { cuotas: 18, interes: 300 }
+    { cuotas: 2, interes: 15 },
+    { cuotas: 3, interes: 25 },
+    { cuotas: 4, interes: 40 },
+    { cuotas: 6, interes: 60 },
+    { cuotas: 9, interes: 75 },
+    { cuotas: 12, interes: 100 },
+    { cuotas: 18, interes: 150 },
+    { cuotas: 24, interes: 180 }
 ];
 
 // Formatear número con puntos
@@ -37,12 +39,12 @@ function calcularCuotas() {
     // Filtrar cuotas según el rango del monto
     const cuotasFiltradas = configuracionCuotas.filter(opcion => {
         if (monto < 30000) return opcion.cuotas <= 2;
-        if (monto >= 30000 && monto < 80000) return opcion.cuotas <= 2;
-        if (monto >= 80000 && monto < 150000) return opcion.cuotas <= 3;
-        if (monto >= 150000 && monto < 250000) return opcion.cuotas <= 6;
-        if (monto >= 250000 && monto < 350000) return opcion.cuotas <= 9;
-        if (monto >= 350000 && monto < 500000) return opcion.cuotas <= 12;
-        return true; // Si es mayor a 500000, mostrar hasta 18 cuotas
+        if (monto >= 30000 && monto < 80000) return opcion.cuotas <= 3;
+        if (monto >= 80000 && monto < 150000) return opcion.cuotas <= 6;
+        if (monto >= 150000 && monto < 250000) return opcion.cuotas <= 9;
+        if (monto >= 250000 && monto < 350000) return opcion.cuotas <= 12;
+        if (monto >= 350000 && monto < 500000) return opcion.cuotas <= 18;
+        return true; // Si es mayor a 500000, mostrar hasta 24 cuotas
     });
 
     cuotasFiltradas.forEach(opcion => {
